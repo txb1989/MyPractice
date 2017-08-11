@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorldNetCore", "10.Stu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jst.UtilStandard", "00.Utils\Jst.UtilStandard\Jst.UtilStandard.csproj", "{0A643F6A-FF2A-4E09-83CD-952B6CEBCE3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspectCoreStudy", "10.Study\AspectCoreStudy\AspectCoreStudy.csproj", "{7FF640A9-6D5D-4CDD-9130-990D2FD679ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{0A643F6A-FF2A-4E09-83CD-952B6CEBCE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A643F6A-FF2A-4E09-83CD-952B6CEBCE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A643F6A-FF2A-4E09-83CD-952B6CEBCE3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FF640A9-6D5D-4CDD-9130-990D2FD679ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF640A9-6D5D-4CDD-9130-990D2FD679ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF640A9-6D5D-4CDD-9130-990D2FD679ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF640A9-6D5D-4CDD-9130-990D2FD679ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +55,6 @@ Global
 		{AB7AF56B-31FE-4DCC-8EF0-C16ABD5AE27D} = {372B744B-A492-46C0-A261-596C25BE176C}
 		{C9D896B7-741C-4893-835C-2F7293463804} = {033C06E8-BC35-437A-ABC4-3F3B217EF7D5}
 		{0A643F6A-FF2A-4E09-83CD-952B6CEBCE3C} = {2E2DF9DE-E9C4-4DD5-9142-6F67E542BCEF}
+		{7FF640A9-6D5D-4CDD-9130-990D2FD679ED} = {033C06E8-BC35-437A-ABC4-3F3B217EF7D5}
 	EndGlobalSection
 EndGlobal
