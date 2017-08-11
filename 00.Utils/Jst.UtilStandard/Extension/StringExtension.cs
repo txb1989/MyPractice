@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace Jst.Utils.Extension
+namespace Jst.UtilStandard.Extension
 {
     /// <summary>
     /// string的扩展方法

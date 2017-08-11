@@ -125,6 +125,7 @@ namespace Utils.CoreUniteTest
 
         #endregion
 
+        #region 随机数和随机字符串
         [TestMethod]
         public void TestRandomStandard()
         {
@@ -133,6 +134,16 @@ namespace Utils.CoreUniteTest
             Assert.AreNotEqual(str1, str2);
 
         }
+        #endregion
+
+        #region 雪花Id生成
+        [TestMethod]
+        public void TestGetSnowId()
+        {
+            
+        }
+
+        #endregion
     }
 
     public enum EnumGender
