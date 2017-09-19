@@ -20,7 +20,7 @@ namespace HelloWorldNetCore
                 {
                     long id= IdHelper.NextId();
                     Console.WriteLine($"Current Thread Id {Thread.CurrentThread.ManagedThreadId} get id = {id}");
-                    Thread.Sleep(10);
+                   // Thread.Sleep(10);
                 }
             });
 
@@ -30,7 +30,7 @@ namespace HelloWorldNetCore
                 {
                     long id = IdHelper.NextId();
                     Console.WriteLine($"Current Thread Id {Thread.CurrentThread.ManagedThreadId} get id = {id}");
-                    Thread.Sleep(10);
+                   // Thread.Sleep(10);
                 }
             });
             Console.ReadKey();

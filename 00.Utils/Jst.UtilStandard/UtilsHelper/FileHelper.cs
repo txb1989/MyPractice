@@ -601,59 +601,7 @@ namespace Jst.UtilStandard.UtilsHelper
             }
         }
         #endregion
-
-        #region 记录错误日志到文件方法
-        /// <summary>
-        /// 记录错误日志到文件方法
-        /// </summary>
-        /// <param name="exMessage"></param>
-        /// <param name="exMethod"></param>
-        /// <param name="userID"></param>
-        //public static void ErrorLog(string exMessage, string exMethod, int userID)
-        //{
-        //    try
-        //    {
-        //        string errVir = "/Log/Error/" + DateTime.Now.ToCmString("yyyy-MM-dd") + ".txt";
-        //        string errPath = Path.Combine(Path.GetTempPath(), errVir);
-
-        //        //string errPath = IEvarioment.
-        //        if (!IsExistFile(errPath)) CreateFile(errPath);
-        //        File.AppendAllText(errPath,
-        //                           "{userID:" + userID + ",exMedthod:" + exMethod + ",exMessage:" + exMessage + "}");
-        //    }
-        //    catch(Exception ex)
-        //    {
-
-        //    }
-        //}
-        #endregion
-
-        #region 输出调试日志
-        /// <summary>
-        /// 输出调试日志
-        /// </summary>
-        /// <param name="factValue">实际值</param> 
-        /// <param name="expectValue">预期值</param>
-        //public static void OutDebugLog(object factValue, object expectValue = null)
-        //{
-        //    //string errPath = System.Web.HttpContext.Current.Server.MapPath(string.Format("/Log/Debug/{0}.html", DateTime.Now.ToShortDateString()));
-        //    string errPath = Path.Combine(Path.GetTempPath(), string.Format("/Log/Debug/{0}.html", DateTime.Now.ToCmString("yyyy-MM-dd")));
-        //    if (!Equals(expectValue, null))
-        //        File.AppendAllLines(errPath,
-        //                           new[]{string.Format(
-        //                               "【{0}】[{3}] 实际值:<span style='color:blue;'>{1}</span> 预期值: <span style='color:gray;'>{2}</span><br/>",
-        //                               DateTime.Now.ToCmString("yyyy-MM-dd")
-        //                               , factValue, expectValue, Equals(expectValue, factValue)
-        //                                   ? "<span style='color:green;'>成功</span>"
-        //                                   : "<span style='color:red;'>失败</span>")});
-        //    else
-        //        File.AppendAllLines(errPath, new[]{
-        //                       string.Format(
-        //                           "【{0}】[{3}] 实际值:<span style='color:blue;'>{1}</span> 预期值: <span style='color:gray;'>{2}</span><br/>",
-        //                           DateTime.Now.ToCmString("yyyy-MM-dd")
-        //                           , factValue, "空", "<span style='color:green;'>成功</span>")});
-        //}
-        #endregion
+        
     }
        
 }

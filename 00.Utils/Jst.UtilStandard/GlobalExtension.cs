@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Reflection;
 
 namespace Jst.UtilStandard
 {
@@ -39,10 +40,27 @@ namespace Jst.UtilStandard
             if (obj == null) throw new ArgumentException(parameterName);
         }
         
-
+        /// <summary>
+        /// 检查继承关系
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static bool Is<T>(this object obj)
         {
-            return obj is T;
+            
+            return obj is T || obj.Is(typeof(T));
+        }
+
+        /// <summary>
+        /// 判断继承关系
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static bool Is(this object obj, Type type)
+        {
+            return type.IsInstanceOfType(obj) || type.IsAssignableFrom(obj.GetType());
         }
 
         #endregion
