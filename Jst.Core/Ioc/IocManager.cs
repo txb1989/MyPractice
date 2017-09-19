@@ -18,6 +18,7 @@ namespace Jst.Core.Ioc
 {
     public class IocManager : IIocManager
     {
+        #region Properties
         /// <summary>
         /// 实例容器，用来产生实例
         /// </summary>
@@ -41,7 +42,8 @@ namespace Jst.Core.Ioc
         private IocManager()
         {
             _builder = new ContainerBuilder();
-        }
+        } 
+        #endregion
 
         #region register方法
 
@@ -234,6 +236,7 @@ namespace Jst.Core.Ioc
 
         #endregion
 
+        #region 初始化IOC
         /// <summary>
         /// 扫描bin目录里面的dll，如果包含IJstAppModule的模块，则依次执行接口的方法
         /// </summary>
@@ -241,18 +244,18 @@ namespace Jst.Core.Ioc
         {
             List<JstModuleInfo> moduleList = new List<JstModuleInfo>();
             AssemblyLoader.LoadAssemblies(startAssemblyName, moduleList);
-            moduleList.ForEach(item => {  if (item.Instance.IsNotNull())  item.Instance.PreInit(this); });
+            moduleList.ForEach(item => { if (item.Instance.IsNotNull()) item.Instance.PreInit(this); });
             RebuildAutofac();
             moduleList.ForEach(item => { if (item.Instance.IsNotNull()) item.Instance.Init(item); });
             moduleList.ForEach(item => { if (item.Instance.IsNotNull()) item.Instance.PostInit(); });
-        }
+        } 
+        #endregion
 
         public void Dispose()
         {
             _container.Dispose();
         }
-
-        private List<IJstAppModule> _appModuleList = new List<IJstAppModule>();
+        
 
         #region private methods
         private List<JstModuleInfo> EnsureCoreFirst(List<JstModuleInfo> moduleList)

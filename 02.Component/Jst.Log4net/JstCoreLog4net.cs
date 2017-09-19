@@ -1,25 +1,22 @@
-﻿
+﻿using Jst.Core.Attributes;
 using Jst.Core.Log;
 using log4net;
 using System;
 using System.IO;
 using System.Reflection;
 
-namespace Jst.Log4net
+namespace Jst.Log4Net
 {
+    [RegisterAliasName("Log4Net")]
     public class JstCoreLog4net : IJstCoreLogs
     {
         private ILog _logger = null;
-        public JstCoreLog4net()
-        {
-            string directory =AppDomain.CurrentDomain.BaseDirectory;
-            log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo(Path.Combine(directory, "log4net.config")));
-            _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        }
+        public JstCoreLog4net():this(Directory.GetCurrentDirectory()) { }
 
         public JstCoreLog4net(string path)
         {
-            log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo(path));
+            log4net.Repository.ILoggerRepository repository = log4net.LogManager.CreateRepository("CoreLogRepository");
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(repository, new FileInfo(Path.Combine(path, "log4net.config")));
             _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         }
         public static object _lockObj = new object();

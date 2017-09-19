@@ -1,12 +1,8 @@
 ﻿using Jst.Core.Ioc;
 using Jst.Core.Log;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Jst.Core.Module;
 
-namespace Jst.Log4net
+namespace Jst.Log4Net
 {
     public class JstLog4NetModule : CoreComponentModule
     {
