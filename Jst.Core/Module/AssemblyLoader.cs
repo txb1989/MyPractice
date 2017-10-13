@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Runtime.Loader;
 using System.Linq;
 using System;
+using Jst.UtilStandard;
 
 namespace Jst.Core.Module
 {
@@ -41,18 +42,27 @@ namespace Jst.Core.Module
             if (typeinfo != null)
             {
                 Type type = typeinfo.AsType();
-                IJstAppModule _instance = startAssembly.CreateInstance(type.FullName, false) as IJstAppModule;
-                moduleList.Add(new JstModuleInfo()
+
+                IJstAppModule _instance = null;
+                //= startAssembly.CreateInstance(type.FullName, false) as IJstAppModule;
+                JstModuleInfo moduleInfo = moduleList.FirstOrDefault(item => item.Instance.Is(type));
+                if (moduleInfo.IsNull())
                 {
-                    AssemblyInfo = startAssembly,
-                    Instance = _instance,
-                    ModuleName = type.FullName,
-                    SortNo = _instance.SortNo
-                }); 
+                    _instance = startAssembly.CreateInstance(type.FullName, false) as IJstAppModule;
+                    moduleList.Add(new JstModuleInfo()
+                    {
+                        AssemblyInfo = startAssembly,
+                        Instance = _instance,
+                        ModuleName = type.FullName,
+                        SortNo = _instance.SortNo
+                    });
+                }
+                
                 #endregion
             }
 
             
         }
+        
     }
 }

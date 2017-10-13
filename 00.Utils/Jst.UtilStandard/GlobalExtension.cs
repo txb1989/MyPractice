@@ -27,7 +27,7 @@ namespace Jst.UtilStandard
         /// <returns></returns>
         public static bool IsNotNull(this object obj)
         {
-            return obj != null;
+            return !IsNull(obj);
         }
         
         /// <summary>

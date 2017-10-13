@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 
 namespace AspectCoreStudy
 {
@@ -6,7 +7,10 @@ namespace AspectCoreStudy
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
+            ConfigurationBuilder builder = new ConfigurationBuilder();
+            builder.AddJsonFile("appsetting.json");
+            
         }
     }
 }

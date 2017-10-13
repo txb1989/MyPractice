@@ -1,13 +1,14 @@
 ﻿using Jst.Core.Attributes;
 using Jst.Core.Log;
 using log4net;
+using log4net.Config;
+using log4net.Repository;
 using System;
 using System.IO;
 using System.Reflection;
 
 namespace Jst.Log4Net
 {
-    [RegisterAliasName("Log4Net")]
     public class JstCoreLog4net : IJstCoreLogs
     {
         private ILog _logger = null;
@@ -15,8 +16,8 @@ namespace Jst.Log4Net
 
         public JstCoreLog4net(string path)
         {
-            log4net.Repository.ILoggerRepository repository = log4net.LogManager.CreateRepository("CoreLogRepository");
-            log4net.Config.XmlConfigurator.ConfigureAndWatch(repository, new FileInfo(Path.Combine(path, "log4net.config")));
+            ILoggerRepository repository = LogManager.CreateRepository("CoreLogRepository");
+            XmlConfigurator.ConfigureAndWatch(repository, new FileInfo(Path.Combine(path, "log4net.config")));
             _logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         }
         public static object _lockObj = new object();

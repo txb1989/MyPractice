@@ -9,26 +9,7 @@ namespace Jst.UtilStandard.Extension
     /// </summary>
     public static class CollectionExtension
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source"></param>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        public static  bool AddIfNotContains<T>(this ICollection<T> source,T item)
-        {
-            if (source.IsNull())
-            {
-                throw new ArgumentNullException("source");
-            }
-            if (source.Contains(item))
-            {
-                return false;
-            }
-            source.Add(item);
-            return true;
-        }
+      
         /// <summary>
         /// 根据约束
         /// </summary>

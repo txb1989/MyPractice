@@ -28,7 +28,7 @@ namespace Jst.Core
             //_instance.RegisterType<JstDefaultCached, ICached>("DefaultCache");
             _instance.RegisterType<JstDefaultCached, ICached>();
             _instance.RegisterType<JstDefaultCached, ICached>("DefaultCache");
-            _instance.RegisterType<JstNullLogs, IJstCoreLogs>(interceptor:false);
+            _instance.RegisterType<JstCoreLog4net, IJstCoreLogs>(interceptor:false);
             _instance.RegisterType<DefaultUnitOfWork, IUnitOfWork>(interceptor: false);
             _instance.RegisterType<UniteOfWorkManager, IUniteOfWorkManager>(interceptor: false);
             (_instance as IocManager).Builder.Register(c=>new JstCoreInterceptor());
